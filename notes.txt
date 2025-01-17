@@ -1,0 +1,34 @@
+In machine learning our goal is to estimate f. 
+1. Here f is a function of independent variable x such that y = f(x)
+let's say y' is the true f(x)' value. ie y' = f(x) + e  Here x = (x1,x2,..xp) i.e p predictors and the relationship between x and y is defined by an error term
+So our ultimate goal is to estimate f such that e is minimized.
+2. We have irreducible and reducible error values. irreducible error values are those values which is the variability associated with the error term e.
+  Since Y is also a function of e(error term) we cannot reduce the error introduced by the error term. 
+   Whereas we can potentially improve the accuracy of ˆf by using the most appropriate statistical learning technique to estimate f.this done by minimizing the reducible error.
+  E(y-y') = E[ f(x) + e - f(x)']^2 = E[f(x)-f(x)']^2 (reducible term) + var(e) ( non reducible term)
+3. There are two main reasons that we may wish to estimate f: prediction and inference.
+4. We estimate f using parametric or non-parametric.
+  Parametric :
+  Assumption : f(x) = c0 + c1x1+..+cpxp is a linear model. 
+  Goal : find the value of p+1 coef(c0,c1,..,cp) such that y = f(x) approximately. 
+  issue : Even though the goal is similified it can lead to overfitting and might not fit the data well and miss the true f.
+  non parametric :
+  Issue : large number of observation is required in order to obtain an accurate estimate.
+5. Restrictive vs flexible :
+    Mostly if we are interested in inferrence we would go for restrictive models. ex : linear model helps to understand the relationship between x and y.
+    But it doesn't mean that flexible model are best for prediction [Not always] because the potential for overftting in highly fexible methods.
+
+6. Measuring the quality of fit :
+  how well its prediction matches the observed data. 
+  In regression we use mean square error MSE = 1/n(sum(yi-f(xi)')^2
+  Goal : To choose the method that gives the lowest test MSE.
+7. Bias variance trade off :
+8. Classification setting :
+  Goal : estimate f on the basis of training observation {(x1,y1),(x2,y2),..(xn,yn)}
+  Training error rate = 1/n (sum(I(yi!= yi')) here I is the indicatior variable that equals to 1 if yi!=yi'
+  This computes the fraction of incorrect classificaiton. average(I(yi!=yi') should be smallest.
+7. Bayes classification 
+  Here x is a set of predictors and target variable y having j values i.e j = 1,.. k classes.
+  Goal : For a new observation x = x0 decide which  class j it belongs by minimizing the error.
+  conditional probabilty : Pr(y=j|x=x0) x0 is assigned to that class which has highest conditional probability. 
+
